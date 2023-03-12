@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import "./index.css"
 import { HashRouter, Route, Routes } from "react-router-dom";
-import ENABLED_EXTENSIONS from "../common/enabledExtensions";
+import ENABLED_EXTENSIONS from "~/shared/enabledExtensions.js";
 
 class ErrorBoundary extends React.Component {
   state: { hasError: boolean }

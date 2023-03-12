@@ -19,10 +19,12 @@
     "baseUrl": "./",
     "pretty": true,
     "paths": {
-      "app/*": ["src/app/*"],
-      "electron/*": ["electron/main/*"],
-      "common/*": ["common/*"]
-    }
+      "~/*": ["src/*"]
+    },
+    "outDir": "src"
   },
-  "include": ["src", "electron", "common"]
+  "include": [
+    "src",
+    "electron"
+  ],
 }

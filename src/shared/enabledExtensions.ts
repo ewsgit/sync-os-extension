@@ -1,4 +1,4 @@
-import { EXTENSIONS } from "../src/app/extensions/index.js";
+import { EXTENSIONS } from "~/app/extensions";
 
 const ENABLED_EXTENSIONS: EXTENSIONS[] = [EXTENSIONS.MenuBar];
 

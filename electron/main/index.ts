@@ -1,9 +1,7 @@
 import { app, BrowserWindow, shell } from "electron";
 import { join } from "node:path";
 import * as remoteMain from "@electron/remote/main";
-// import ENABLED_EXTENSIONS from "common/enabledExtensions.js";
-
-console.log(import.meta.url);
+import ENABLED_EXTENSIONS from "~/shared/enabledExtensions.js";
 
 remoteMain.initialize();
 process.env.DIST_ELECTRON = join(__dirname, "../");
@@ -74,12 +72,8 @@ async function createWindow() {
 app.whenReady().then(async () => {
   await createWindow();
 
-  const ENABLED_EXTENSIONS: string[] = [];
-
   ENABLED_EXTENSIONS.map((extensionName) => {
-    import(`./app/extensions/${extensionName}/index.tsx`).then((ext) => {
-      ext.default.onLoad();
-    });
+    require(`~/app/extensions/${extensionName}/index.tsx`).default.onLoad();
   });
 });
 
